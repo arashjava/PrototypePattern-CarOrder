@@ -13,7 +13,6 @@ import java.util.logging.Logger;
  * @author arash
  */
 public class Chevy extends Factory{
-    private int noOfClones=0;
 
     public Chevy(String name, String desc) {
         super(name, desc);
@@ -29,8 +28,7 @@ public class Chevy extends Factory{
         try {
             myCar= (Chevy)super.clone();
             String carName= myCar.getName();
-            noOfClones++;
-            myCar.setName(carName+noOfClones);
+            myCar.setName(carName);
         } catch (CloneNotSupportedException ex) {
             Logger.getLogger(Chevy.class.getName()).log(Level.SEVERE, null, ex);
         }
